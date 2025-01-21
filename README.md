@@ -42,7 +42,7 @@ We Are Family 是一个专注于提升学习效率和促进社区交流的在线
 
 1. 克隆项目
 ```bash
-git clone https://github.com/yourusername/we-are-family.git
+git clone https://github.com/zeroicey/we_are_family.git
 cd we-are-family
 ```
 
