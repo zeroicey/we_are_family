@@ -1,5 +1,99 @@
-# Vue 3 + Vite
+# We Are Family - 学习社区
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+We Are Family 是一个专注于提升学习效率和促进社区交流的在线平台。通过提供专注计时、目标设定、社区互助等功能，帮助用户建立良好的学习习惯，实现个人成长。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 主要功能
+
+### 专注模式
+- 可自定义的专注计时器
+- 每日学习目标设定
+- 多种环境音效选择
+- 专注数据统计和记录
+- 专注排行榜
+
+### 社区互助
+- 学习伙伴匹配
+- 实时交流讨论
+- 学习经验分享
+- 互助答疑系统
+
+### 个人中心
+- 学习进度追踪
+- 成就系统
+- 个性化设置
+- 消息通知
+
+## 技术栈
+
+- 前端框架：Vue 3
+- 构建工具：Vite
+- 路由管理：Vue Router
+- 状态管理：Vuex
+- UI 组件：自定义组件
+- 图标库：Lucide Icons
+
+## 快速开始
+
+### 环境要求
+- Node.js >= 14.0.0
+- npm >= 6.0.0
+
+### 安装步骤
+
+1. 克隆项目
+```bash
+git clone https://github.com/yourusername/we-are-family.git
+cd we-are-family
+```
+
+2. 安装依赖
+```bash
+npm install
+```
+
+3. 启动开发服务器
+```bash
+npm run dev
+```
+
+4. 构建生产版本
+```bash
+npm run build
+```
+
+## 功能预览
+
+### 专注模式
+- 设置专注目标和时长
+- 选择环境音效
+- 查看专注记录和统计
+- 参与专注排行榜
+
+### 社区互助
+- 发布和回答问题
+- 分享学习经验
+- 寻找学习伙伴
+- 参与话题讨论
+
+### 个人中心
+- 查看学习数据
+- 管理个人信息
+- 设置通知偏好
+- 查看消息提醒
+
+## 参与贡献
+
+我们欢迎所有形式的贡献，无论是新功能、bug 修复还是文档改进。请遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建新的特性分支
+3. 提交你的改动
+4. 创建 Pull Request
+
+## 开源协议
+
+本项目采用 MIT 协议开源，详见 [LICENSE](LICENSE) 文件。
+
+## 致谢
+
+感谢所有为本项目做出贡献的开发者和用户。如果你觉得这个项目对你有帮助，请给我们一个 star 
