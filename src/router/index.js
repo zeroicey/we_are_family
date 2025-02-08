@@ -12,6 +12,7 @@ import GeneralSettings from '../views/profile/GeneralSettings.vue'
 import HelpView from '../views/profile/Help.vue'
 import FocusTimer from '../views/focus/FocusTimer.vue'
 import FocusRecord from '../views/focus/FocusRecord.vue'
+import ProfileEdit from '../views/profile/ProfileEdit.vue'
 
 // Jobs 模块
 import Jobs from '../views/Jobs.vue'
@@ -21,6 +22,12 @@ import JobFavorites from '../views/JobFavorites.vue'
 
 // Community 模块
 import Community from '../views/Community.vue'
+
+// Plans 模块
+import PlanList from '../views/plans/PlanList.vue'
+import PlanDetail from '../views/plans/PlanDetail.vue'
+import PlanCreate from '../views/plans/PlanCreate.vue'
+import PlanEdit from '../views/plans/PlanEdit.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -118,6 +125,12 @@ const router = createRouter({
       meta: { requiresAuth: true }
     },
     {
+      path: '/profile/edit',
+      name: 'edit',
+      component: ProfileEdit,
+      meta: { requiresAuth: true }
+    },
+    {
       path: '/profile/help',
       name: 'help-feedback',
       component: HelpView,
@@ -134,6 +147,31 @@ const router = createRouter({
       path: '/focus/record',
       name: 'focus-record',
       component: FocusRecord,
+      meta: { requiresAuth: true }
+    },
+    // Plans 模块路由
+    {
+      path: '/plans',
+      name: 'plans',
+      component: PlanList,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/plans/create',
+      name: 'plan-create',
+      component: PlanCreate,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/plans/:id',
+      name: 'plan-detail',
+      component: PlanDetail,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/plans/:id/edit',
+      name: 'plan-edit',
+      component: PlanEdit,
       meta: { requiresAuth: true }
     }
   ]

@@ -5,7 +5,7 @@
         v-for="job in filteredJobs"
         :key="job.id"
         :job="job"
-        @click="handleJobClick"
+        @click="() => handleJobClick(job)"
       />
       <div v-if="filteredJobs.length === 0" class="empty-state">
         <FileSearch class="empty-icon" />

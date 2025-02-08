@@ -59,7 +59,6 @@
 
 <script setup>
 import { MapPin, GraduationCap, Clock } from 'lucide-vue-next'
-import { useRouter } from 'vue-router'
 
 const props = defineProps({
   job: {
@@ -68,17 +67,11 @@ const props = defineProps({
   }
 })
 
-const router = useRouter()
-
-const handleClick = () => {
-  router.push({
-    name: 'JobDetail',
-    params: { id: props.job.id }
-  })
-}
-
 const emit = defineEmits(['click'])
 
+const handleClick = () => {
+  emit('click', props.job)
+}
 </script>
 
 <style scoped>

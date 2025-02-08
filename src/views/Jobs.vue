@@ -22,11 +22,13 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import AppHeader from '../components/common/AppHeader.vue'
 import JobMenu from '../components/jobs/JobMenu.vue'
 import JobFilter from '../components/jobs/JobFilter.vue'
 import JobList from '../components/jobs/JobList.vue'
 
+const router = useRouter()
 const filters = ref({})
 const searchQuery = ref('')
 
@@ -35,8 +37,7 @@ const handleSearch = (query) => {
 }
 
 const handleJobSelect = (job) => {
-  // TODO: 显示职位详情
-  console.log('Selected job:', job)
+  router.push(`/jobs/${job.id}`)
 }
 </script>
 
