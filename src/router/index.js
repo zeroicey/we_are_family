@@ -22,6 +22,7 @@ import JobFavorites from '../views/JobFavorites.vue'
 
 // Community 模块
 import Community from '../views/Community.vue'
+import ActivityDetail from '../views/community/ActivityDetail.vue'
 
 // Plans 模块
 import PlanList from '../views/plans/PlanList.vue'
@@ -79,6 +80,12 @@ const router = createRouter({
       path: '/community',
       name: 'community',
       component: Community,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/community/activity/:id',
+      name: 'activity-detail',
+      component: ActivityDetail,
       meta: { requiresAuth: true }
     },
     // Profile 模块路由

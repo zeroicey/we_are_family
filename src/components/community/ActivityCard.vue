@@ -1,5 +1,5 @@
 <template>
-  <div class="activity-card">
+  <div class="activity-card" @click="handleCardClick">
     <div class="user-info">
       <div class="avatar">
         <img v-if="activity.userAvatar" :src="activity.userAvatar" :alt="activity.userName">
@@ -15,12 +15,12 @@
       <button 
         v-if="activity.description.length > 100" 
         class="expand-btn"
-        @click="isExpanded = !isExpanded"
+        @click.stop="isExpanded = !isExpanded"
       >
         {{ isExpanded ? '收起' : '展开' }}
         <ChevronDown class="expand-icon" :class="{ expanded: isExpanded }" />
       </button>
-      <div class="media" v-if="activity.image" @click="showPreview = true">
+      <div class="media" v-if="activity.image" @click.stop="showPreview = true">
         <img :src="activity.image" :alt="activity.title">
         <div class="media-overlay">
           <Search class="preview-icon" />
@@ -41,7 +41,7 @@
             <MessageCircle class="stat-icon" />
             <span>{{ activity.commentCount }}</span>
           </div>
-          <div class="stat-item" @click="handleLike">
+          <div class="stat-item" @click.stop="handleLike">
             <Heart class="stat-icon" :class="{ active: activity.isLiked }" />
             <span>{{ activity.likeCount }}</span>
           </div>
@@ -61,9 +61,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { MessageCircle, Heart, MapPin, ChevronDown, Search } from 'lucide-vue-next'
 import ImagePreview from '../common/ImagePreview.vue'
 
+const router = useRouter()
 const props = defineProps({
   activity: {
     type: Object,
@@ -86,6 +88,10 @@ const handleLike = () => {
   }
   emit('update:activity', updatedActivity)
 }
+
+const handleCardClick = () => {
+  router.push(`/community/activity/${props.activity.id}`)
+}
 </script>
 
 <style scoped>
@@ -94,6 +100,13 @@ const handleLike = () => {
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .user-info {
